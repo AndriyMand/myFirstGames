@@ -1,0 +1,37 @@
+
+<?php
+
+   if (!empty($this->winner)) {
+        echo "<h1 style=\"color:red\">{$this->winner->name} is Winner! His points = {$this->winner->points}</h1>";
+   } else {
+       echo "<br><b>No winners...</b>";
+   }
+ ?>
+
+<ol>
+    <a href="//<?php echo $this->baseUrl;?>game/index"><input type="button" value="New Game"/></a>
+        
+        <table>    
+            <?php foreach ($this->table as $name => $i) { ?>
+                <tr>
+                
+                    <td>
+                        <strong><?php echo $name; ?>:</strong> <?php echo $this->points[$name]; ?>
+                    </td>
+                    <td>
+                        <div class="row">
+                        <?php foreach ($i as $index => $card) { ?>
+                            <div class="card">
+                                <div><?php echo $card->point ?></div>
+                                <div><?php echo $card->value ?></div>
+                                <div></div>
+                            </div>
+                        <?php } ?>
+                </div>
+            <?php } ?>
+            </td>
+            </tr>
+        </table> 
+    
+</ol>
+

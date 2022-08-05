@@ -1,0 +1,19 @@
+<form method="POST" action="//<?php echo $this->baseUrl;?>game/play">
+
+    <input type="submit" name="hit" value="Hit">
+    <a href="//<?php echo $this->baseUrl;?>game/round"><input type="button" value="Stand"/></a>
+
+    <h3>Your points : <?php echo $this->points; ?></h3>
+
+    <br>
+        
+        <div class="row">
+            <?php foreach($this->hand as $card) { ?>
+                <div class="card">
+                    <div><?php echo $card->point  ?></div>
+                    <div><?php echo $card->value ?></div>
+                    <div></div>
+                </div>
+        <?php } ?>
+        </div>
+</form>

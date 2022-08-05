@@ -1,0 +1,21 @@
+
+<ol>
+<?php
+
+    if (!empty($this->looser)) {
+        echo "<h1 style=\"color:red\">{$this->looser->name} is LOOSER! His points = {$this->looser->points}</h1>";
+        echo "<br><b>New Game...</b>";
+    }
+
+    foreach ($this->points as $name => $value) { ?>
+        
+    <li><strong><?php echo $name; ?>:</strong> <?php echo $value; ?></li>
+    
+    <?php } ?>
+    
+</ol>
+<?php
+
+
+
+include ('play.phtml');

@@ -1,0 +1,31 @@
+<form method="POST" action="//<?php echo $this->baseUrl;?>game/play">
+    
+    <?php foreach($this->table as $row) {?>
+        <div class="row">
+            <?php foreach($row as $index => $card) { ?>
+                <div class="card p<?php echo $card['p']  ?>">
+                    <div><?php echo $card['p']  ?></div>
+                    <div><?php echo $card['v'] ?></div>
+                    <div><!-- <input type="radio" name="chooseRow" value="<?php echo $index ?>">--></div>
+                </div>
+        <?php } ?>
+        </div>
+    <?php } ?>
+        
+    <br>
+    <br>
+        
+        <div class="row">
+            <?php foreach($this->hand as $i => $card) { ?>
+                <div class="card p<?php echo $card['p']  ?>">
+                    <div><?php echo $card['p']  ?></div>
+                    <div><?php echo $card['v'] ?></div>
+                    <div><input type="radio" name="ChoosedCard" value="<?php echo $i ?>"></div>
+                </div>
+        <?php } ?>
+        </div>
+    
+        <input type="submit" name="Ready" value="Ready">
+        
+</table>
+</form>
